@@ -2,12 +2,6 @@ import logging
 import serial.tools.list_ports
 import serial
 from time import sleep
-# try:
-#     from utils import getChannelValue
-# except ImportError:
-#     from utils.utile import getChannelValue
-
-# Prominent Arduino map function
 
 
 def _map(x, in_min, in_max, out_min, out_max):
@@ -65,7 +59,7 @@ class SerialObject:
             ports = list(serial.tools.list_ports.comports())
             for p in ports:
                 if "Arduino" in p.description:
-                    print(f'{p.description} Connected')
+                    print('{} Connected'.format(p.description))
                     self.ser = serial.Serial(p.device)
                     self.ser.baudrate = baudRate
                     connected = True
@@ -115,10 +109,10 @@ def link_test_main():
             print("Arduino at {}".format(p.description))
 
 
-def value_take_main():
+def value_take_main(loop_num=500):
     mySerial = SerialObject(portNo="/dev/ttyACM0", baudRate=9600)
     sleep(2)
-    for a in range(500):
+    for a in range(loop_num):
         value = getChannelValue(mySerial=mySerial, arduino_standardization=False, standardization=True)
         sleep(0.1)
         print(value)

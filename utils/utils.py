@@ -10,6 +10,7 @@ from PIL import Image
 try:
     from SerialObject import SerialObject
 except:
+    # noinspection PyUnresolvedReferences
     from utils.SerialObject import SerialObject
 
 

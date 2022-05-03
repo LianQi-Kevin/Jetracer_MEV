@@ -1,6 +1,5 @@
 import colorsys
 import random
-# from webcolors import rgb_to_hex
 from colormap import rgb2hex
 
 def get_n_hls_colors(num):
@@ -33,7 +32,6 @@ def ncolors(num):
 
 if __name__ == '__main__':
     for a in get_n_hls_colors(8):
-    # for a in ncolors(8):
         print(a)
         print(rgb2hex(a[0], a[1], a[2], normalised=True))
         # print(rgb2hex(a[0], a[1], a[2], normalised=False))
