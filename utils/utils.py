@@ -131,22 +131,31 @@ def fromImgCreatJsonLabel(img_folder, json_path=None, input_dict=None, basic_cou
 
 
 # 读入文件夹内所有json文件并按照count值排序
-def readInTagsFolderAndSort(json_path):
+def readInTagsFolderAndSort(json_path, img_path=None):
     """
+    :param img_path: Image folder for additional input when calling the function from a non-standard location
     :param json_path: Folder where json tags are stored
     :return: sorted json_list
     """
+    # print(os.path.exists(json_path))
+    # print(glob.glob(os.path.join(json_path, '*.json')))
     if len(glob.glob(os.path.join(json_path, '*.json'))) != 0:
         json_dict = {}
         for json_file_path in glob.glob(os.path.join(json_path, '*.json')):
-            with open(json_file_path, "r") as json_file:
+            with open(json_file_path.replace("\\", "/"), "r") as json_file:
                 input_dict = json.loads("".join(json_file.readlines()))
-                if os.path.isfile(input_dict["img_path"]):
-                    json_dict[input_dict["count"]] = input_dict
+                if img_path is None:
+                    if os.path.isfile(input_dict["img_path"]):
+                        json_dict[input_dict["count"]] = input_dict
+                else:
+                    if os.path.isfile(os.path.join(img_path, input_dict["img_name"])):
+                        input_dict["img_path"] = os.path.join(img_path, input_dict["img_name"]).replace("\\", "/")
+                        json_dict[input_dict["count"]] = input_dict
         key_list = list(json_dict.keys())
         # return json_dict.keys(), json_dict
         return sorted(key_list), json_dict
     else:
+        print("{} is empty".format(json_path))
         return [], {}
 
 

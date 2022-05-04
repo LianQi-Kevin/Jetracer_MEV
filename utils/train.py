@@ -68,7 +68,7 @@ def train_eval_model(model, train_eval, BATCH_SIZE, optimizer, epochs, device):
             batch_size=BATCH_SIZE,
             shuffle=True  # 每次加载数据时打乱数据顺序 推断具有抗过拟合的功能
         )
-
+        print("successful load dataset")
         time.sleep(1)
 
         # 判断训练还是验证

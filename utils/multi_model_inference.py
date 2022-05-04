@@ -241,7 +241,7 @@ class ModelDetect:
         if self.model_type == "torch":
             self.set_model()
             self.model.to(device=device)
-        elif self.model_type == "TRT":
+        elif self.model_type in ["TRT", "trt"]:
             self.model = TRTModule()
         self.model.load_state_dict(torch.load(self.model_path))
 

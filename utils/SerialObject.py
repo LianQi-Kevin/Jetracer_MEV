@@ -10,6 +10,17 @@ def _map(x, in_min, in_max, out_min, out_max):
 
 # 发送Y并获取通道标准值
 def getChannelValue(mySerial, arduino_standardization=True, standardization=True, max_value=2000, min_value=1000, CH1_bias=0, CH2_bias=0, CH3_bias=0):
+    """
+    :param mySerial:
+    :param arduino_standardization:
+    :param standardization:
+    :param max_value:
+    :param min_value:
+    :param CH1_bias:
+    :param CH2_bias:
+    :param CH3_bias:
+    :return:
+    """
     if arduino_standardization:
         mySerial.sendData(data="Y")
         return mySerial.getData(split_str="#")
