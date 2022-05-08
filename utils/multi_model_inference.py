@@ -273,7 +273,7 @@ class ModelDetect:
 
     def inference(self, img_value):
         processed_img = preprocess(img_value)
-        if self.model_type == "TRT" and self.fp16 is True:
+        if self.model_type in ["TRT", "trt"] and self.fp16 is True:
             processed_img = processed_img.half()
         output = self.model(processed_img).detach().cpu().numpy().flatten()
         return output[0], output[1]

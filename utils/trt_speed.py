@@ -9,11 +9,10 @@ model = torchvision.models.resnet18(pretrained=False)
 model.fc = torch.nn.Linear(512, output_dim)
 model = model.cuda().eval().half()
 
-basename_list = ["../0422school_A/choicest_batch8_epoch5_RESNET_18",
-                 "../0422school_A/choicest_batch8_epoch10_RESNET_18",
-                 "../0422school_A/choicest_batch8_epoch15_RESNET_18",
-                 "../0422school_A/choicest_batch8_epoch20_RESNET_18",
-                 "../0422school_A/choicest_batch8_epoch30_RESNET_18",
+basename_list = ["../0422school_A/choicest_batch16_epoch15_RESNET_18",
+                 "../0422school_A/choicest_batch32_epoch15_RESNET_18",
+                 "../0422school_A/choicest_batch48_epoch15_RESNET_18",
+                 "../0422school_A/choicest_batch64_epoch15_RESNET_18",
                  ]
 
 for basename in basename_list:
