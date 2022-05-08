@@ -37,38 +37,62 @@ if __name__ == '__main__':
     # 定义多个模型
     # model_0 = {
     #     "model_type": "torch",
-    #     "model_path": "0422school_A/choicest_batch8_epoch1_RESNET_18.pth",
+    #     "model_path": "0422school_A/choicest_batch8_epoch5_RESNET_18.pth",
+    #     "model_name": "RESNET_18",
+    #     "output_dim": 2
+    # }
+    # model_1 = {
+    #     "model_type": "torch",
+    #     "model_path": "0422school_A/choicest_batch8_epoch10_RESNET_18.pth",
+    #     "model_name": "RESNET_18",
+    #     "output_dim": 2
+    # }
+    # model_2 = {
+    #     "model_type": "torch",
+    #     "model_path": "0422school_A/choicest_batch8_epoch15_RESNET_18.pth",
+    #     "model_name": "RESNET_18",
+    #     "output_dim": 2
+    # }
+    # model_3 = {
+    #     "model_type": "torch",
+    #     "model_path": "0422school_A/choicest_batch8_epoch20_RESNET_18.pth",
+    #     "model_name": "RESNET_18",
+    #     "output_dim": 2
+    # }
+    # model_4 = {
+    #     "model_type": "torch",
+    #     "model_path": "0422school_A/choicest_batch8_epoch30_RESNET_18.pth",
     #     "model_name": "RESNET_18",
     #     "output_dim": 2
     # }
 
     model_0 = {
         "model_type": "trt",
-        "model_path": "0422school_A/choicest_batch8_epoch5_RESNET_18_trt.pth",
+        "model_path": "0422school_A/choicest_batch8_epoch15_RESNET_18_trt.pth",
         "fp16": True,
         "output_dim": 2
     }
     model_1 = {
         "model_type": "trt",
-        "model_path": "0422school_A/choicest_batch8_epoch10_RESNET_18_trt.pth",
+        "model_path": "0422school_A/choicest_batch16_epoch15_RESNET_18_trt.pth",
         "fp16": True,
         "output_dim": 2
     }
     model_2 = {
         "model_type": "trt",
-        "model_path": "0422school_A/choicest_batch8_epoch15_RESNET_18_trt.pth",
+        "model_path": "0422school_A/choicest_batch32_epoch15_RESNET_18_trt.pth",
         "fp16": True,
         "output_dim": 2
     }
     model_3 = {
         "model_type": "trt",
-        "model_path": "0422school_A/choicest_batch8_epoch20_RESNET_18_trt.pth",
+        "model_path": "0422school_A/choicest_batch48_epoch15_RESNET_18_trt.pth",
         "fp16": True,
         "output_dim": 2
     }
     model_4 = {
         "model_type": "trt",
-        "model_path": "0422school_A/choicest_batch8_epoch30_RESNET_18_trt.pth",
+        "model_path": "0422school_A/choicest_batch64_epoch15_RESNET_18_trt.pth",
         "fp16": True,
         "output_dim": 2
     }
