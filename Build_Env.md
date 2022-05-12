@@ -43,7 +43,7 @@ conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cudatoolkit=1
 
 ##### step - 3. Install jupyter clickable image widget
 > 如`jupyter labextension install js` 报错 可考虑跳过step-3安装 \
-> 使用`check_and_modify_un_change_mode.ipynb`替换`check_and_modify.ipynb` \
+> 使用`check_and_modify_none_change_mode.ipynb`替换`check_and_modify.ipynb` \
 > 或将`check_and_modify.ipynb`运行于Jetson Nano
 1. install jupyter
 ```shell
@@ -94,5 +94,5 @@ pip install -r requirements.txt
     ```shell
     git clone https://github.com/NVIDIA-AI-IOT/torch2trt
     cd torch2trt
-    python setup.py instal
+    python setup.py install
     ```
