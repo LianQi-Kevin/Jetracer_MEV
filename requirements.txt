@@ -1,0 +1,19 @@
+# torch
+torch>=1.7
+torchvision
+
+# ipywidgets
+ipywidgets
+ipykernel
+
+# image
+pillow
+opencv-python
+
+# others
+colormap
+numpy>=1.19.3
+argparse
+pyserial
+scipy>=0.13
+pooch

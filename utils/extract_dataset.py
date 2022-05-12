@@ -1,7 +1,6 @@
 import os
 import shutil
 from utils import readInTagsFolderAndSort
-import json
 
 
 if __name__ == '__main__':

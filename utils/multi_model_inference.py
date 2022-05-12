@@ -10,7 +10,6 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 from PIL import Image as Image
-from torch2trt import TRTModule
 from colormap import rgb2hex
 
 try:
@@ -242,6 +241,7 @@ class ModelDetect:
             self.set_model()
             self.model.to(device=device)
         elif self.model_type in ["TRT", "trt"]:
+            from torch2trt import TRTModule
             self.model = TRTModule()
         self.model.load_state_dict(torch.load(self.model_path))
 
